@@ -1,0 +1,4 @@
+/3rdparty
+/vendor
+.DS_Store
+/composer.lock

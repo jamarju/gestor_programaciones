@@ -1,0 +1,202 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+}
+
+body {
+	background-color: #fbfbfc;
+	color: #525453;
+	font-family: arial;
+}
+
+@font-face {
+	font-family: 'tizaMinusculas';
+	src: url('../fonts/Cheveuxdange.ttf');
+}
+
+@font-face {
+	font-family: 'tizaMayusculas';
+	src: url('../fonts/chalkdust.ttf');
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#header {
+	width: 100%;
+	min-width: 1000px;
+	height: 30px;
+	background-color: #008080;
+	color: white;
+	font-size: 0.7em;
+	padding: 10px;
+	overflow: hidden;
+	font-family: tizaMayusculas;
+}
+
+#container {
+	width: 95%;
+	margin-top: 20px;
+	padding: 10px;
+}
+
+#error {
+	display: none;
+	background-color: #ff6666;
+	border: 1px solid red;
+	border-radius: 5px;
+	color: white;
+	width: 100%;
+	min-width: 1000px;
+	padding: 10px;
+	overflow: hidden;
+	margin: 10px;
+}
+
+/* DEPARTAMENTOS */
+.departamento {
+	width: 250px;
+	height: 100px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	display: inline-flex;
+	padding: 5px;
+	background-color: #193737;	
+	cursor: pointer;
+	text-align: center;
+}
+
+.departamento a {
+	text-decoration: none;
+	color: white;
+	font-size: 1.4em;
+	vertical-align: middle;
+	text-shadow: 1px 1px 2px #525453;
+	font-family: tizaMinusculas;
+	height: auto;
+	max-height: 30%;
+	margin: auto;
+}
+
+
+/* ASIGNATURAS */
+.asignatura {
+	table-layout: fixed;
+	width: 1000px;
+    border: 2px solid #008080;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+/* filas pares del bloque de los niveles con color de fondo */
+.cursos:nth-child(even) {
+	background-color: #e4f3f3;
+}
+
+.asignatura thead td {
+	color: #008080;
+	font-size: 0.8em;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px;
+}
+
+.asignatura tbody td {
+	border: 1px solid #008080;
+	height: 50px;
+}
+
+.nivel {
+	width: 70px;
+	padding: 0px 5px;
+}
+
+.asignatura .cabeceras {
+	text-align: center;
+	border-bottom: 3px solid #008080;
+	background-color: #b0d0ce;
+}
+
+.divNoFichero {
+	border: 1px dashed #008080;
+	height: 45px;
+	width: 90%;
+	margin: 5px auto;
+	border-radius: 5px;
+	text-align: center;
+	color: #008080;
+	background-color: #e6e6e6;
+}
+
+.dropArea {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	border: none;
+	/*background-color: rgba(255,0,0,0.2);*/
+}
+
+.existe, .noExiste {
+	width: 220px;
+}
+
+.existe .divFichero, .noExiste .divNoFichero, .noExiste .dropArea {
+	display:block;
+}
+
+.existe .divNoFichero, .noExiste .divFichero, .existe .dropArea {
+	display:none;
+}
+
+
+.fa-times{
+	top: -20px;
+	float: right;
+}
+
+.fa-arrow-up {
+	margin-top: 5px;
+}
+
+.archivo {
+	width: 210px;
+	padding: 0px 5px;
+	text-decoration: none;
+	margin: auto;
+}
+
+
+/* Título de la tabla: nombre de la asignatura */
+.genericos th{
+	background-color: #008080;
+	color: white;
+	font-family: tizaMinusculas;
+	text-align: center;
+	padding: 0px 5px;
+}
+
+/* DIV cargando */
+#loading {
+	display: none;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	border: none;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.loader {
+    border: 6px solid lightgrey;
+	border-top: 6px solid lightseagreen;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	margin: 10px auto;
+	animation: spin 2s linear infinite;
+}
