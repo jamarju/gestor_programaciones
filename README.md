@@ -16,21 +16,38 @@ sudo apt-get install php7.0-zip
 
 ## Instalación
 
-* Bajar dependencias con composer, ejecutar desde la carpeta `gp`:
+Bajar dependencias con composer, ejecutar desde la carpeta `gp`:
 
 ```
 cd gp
 composer update
 ```
 
-* Crear virtualhost de Apache/Nging apuntando su raíz a `gp/public`.
+Crear virtualhost de Apache/Nging apuntando su raíz a `gp/public`.
 
-* Cambiar propietario de `gp`:
+Cambiar propietario de `gp`:
 
 ```
 chown -R www-data:www-data gp
 ```
 
+Aumentar el tamaño máximo de upload/post. Ejemplo para nginx + php7.0-fpm:
+
+`/etc/php/7.0/fpm/php.ini`:
+
+```
+upload_max_filesize = 50M
+post_max_size = 50M
+```
+
+`/etc/nginx/sites-available/default` -> 
+
+```
+server {
+	...
+	client_max_body_size 50M;
+}
+```
 
 ## Configuración
 
