@@ -231,7 +231,7 @@ class HojaConfig {
         $hc = $sheet->getHighestColumn();
         $dptos = [];
 
-        for ($r = 2; $r < $hr; $r++) {
+        for ($r = 2; $r <= $hr; $r++) {
             $nombre = $sheet->getCellByColumnAndRow(0, $r)->getValue();
             $clave = $sheet->getCellByColumnAndRow(1, $r)->getValue();
             $dpto = New Dpto($clave, $nombre);
@@ -253,7 +253,7 @@ class HojaConfig {
 
         $hr = $sheet->getHighestRow();
 
-        for ($r = 2; $r < $hr; $r++) {
+        for ($r = 2; $r <= $hr; $r++) {
             $nombre = $sheet->getCellByColumnAndRow(0, $r)->getValue();
             $clave = $sheet->getCellByColumnAndRow(1, $r)->getValue();
             //error_log("clave: $clave", 0);
@@ -277,7 +277,7 @@ class HojaConfig {
         }
 
         // Itera asignaturas del departamento
-        for ($r = 2; $r < $hr; $r++) {
+        for ($r = 2; $r <= $hr; $r++) {
             $d = $sheet->getCellByColumnAndRow(0, $r);
             if ($d != $clave_dpto) continue;
 
